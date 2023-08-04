@@ -1,12 +1,11 @@
 require('@babel/register');
 require('dotenv').config();
 const express = require('express');
-const mailer = require('./nodemailer');
 const config = require('./config/serverConfig');
 
 const app = express();
 
-const PORT = process.env.PORT || 4020;
+const PORT = process.env.PORT || 4000;
 
 const indexRouter = require('./routes/index.routes');
 

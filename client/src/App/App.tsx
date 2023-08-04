@@ -1,35 +1,29 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useEffect } from 'react';
+import { Route, Routes } from 'react-router-dom';
+import './App.css';
+import AdminList from '../Features/Admin/AdminList';
+import MainList from '../Features/Main/MainList';
+import { useAppDispatch } from '../store';
+import { authCheckAdmin } from '../Features/Admin/AuthSlice';
 
-function App() {
-  const [count, setCount] = useState(0)
+function App(): JSX.Element {
+  const dispatch = useAppDispatch();
+  useEffect(() => {
+    dispatch(authCheckAdmin());
+  }, []);
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div className="app">
+      <Routes>
+        {/* <Route path="/" element={<NavBar />}> */}
+        <Route index element={<MainList />} />
+        <Route path="/admin-ping" element={<AdminList />} />
+        {/* </Route> */}
+        {/* <Route path="*" element={<Error />} /> */}
+      </Routes>
+      {/* <Footer /> */}
+    </div>
+  );
 }
 
-export default App
+export default App;
