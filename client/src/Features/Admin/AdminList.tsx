@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useAppDispatch, useAppSelector } from '../../store';
 import { useNavigate } from 'react-router-dom';
-import { authorization, clearError, logOut } from './AuthSlice';
+import { authorization, clearError, logOut } from './redux/AuthSlice';
 
 function AdminList(): JSX.Element {
   const [password, setPassword] = useState('');

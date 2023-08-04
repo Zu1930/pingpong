@@ -16,7 +16,11 @@ export const authLogFetch = async (admin: AdminWithOutId): Promise<Admin> => {
 };
 
 export const authCheckUserFetch = async (): Promise<Admin> => {
-  const res = await fetch('/api/admin/check');
+  const res = await fetch('/api/admin/check',{
+  method: 'GET',
+  headers: {
+    'Content-type': 'application/json',
+  }},);
   return res.json();
 };
 
