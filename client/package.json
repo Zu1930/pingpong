@@ -9,17 +9,80 @@
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest",
+      "airbnb",
+      "airbnb-typescript"
+    ],
+    "rules": {
+      "jsx-a11y/interactive-supports-focus": 0,
+      "jsx-a11y/control-has-associated-label": 0,
+      "react/jsx-indent": 0,
+      "implicit-arrow-linebreak": 0,
+      "@typescript-eslint/indent": 0,
+      "@typescript-eslint/comma-dangle": 0,
+      "function-paren-newline": 0,
+      "no-param-reassign": 0,
+      "no-nested-ternary": 0,
+      "no-confusing-arrow": 0,
+      "operator-linebreak": 0,
+      "jsx-a11y/anchor-is-valid": 0,
+      "jsx-a11y/label-has-associated-control": 0,
+      "react/jsx-one-expression-per-line": 0,
+      "jsx-a11y/click-events-have-key-events": 0,
+      "default-case": 0,
+      "@typescript-eslint/default-param-last": 0,
+      "@typescript-eslint/switch-exhaustiveness-check": 2,
+      "@typescript-eslint/explicit-function-return-type": [
+        2,
+        {
+          "allowExpressions": true,
+          "allowTypedFunctionExpressions": true,
+          "allowHigherOrderFunctions": true,
+          "allowDirectConstAssertionInArrowFunctions": true
+        }
+      ],
+      "no-await-in-loop": 0,
+      "@typescript-eslint/consistent-type-definitions": [
+        "error",
+        "type"
+      ],
+      "consistent-return": 0,
+      "object-curly-newline": 0,
+      "@typescript-eslint/no-use-before-define": 0,
+      "jsx-a11y/no-static-element-interactions": 0
+    },
+    "parserOptions": {
+      "project": [
+        "**/tsconfig.json"
+      ]
+    }
+  },
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@reduxjs/toolkit": "^1.9.5",
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",
     "@typescript-eslint/eslint-plugin": "^6.0.0",
     "@typescript-eslint/parser": "^6.0.0",
     "@vitejs/plugin-react": "^4.0.3",
-    "eslint": "^8.45.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-redux": "^8.1.1",
+    "react-router-dom": "^6.14.0",
+    "eslint": "^8.46.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-airbnb-typescript": "^17.1.0",
+    "eslint-plugin-hooks": "^0.4.3",
+    "eslint-plugin-import": "^2.28.0",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "eslint-plugin-react": "^7.33.1",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.3",
     "typescript": "^5.0.2",
